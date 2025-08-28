@@ -76,10 +76,43 @@ document.getElementById("clear-btn").addEventListener('click', function () {
         
 // Clear call history Part End
 
+// Copy Count Part Start
+
+function copyCount() {
+  document.getElementById("parent-card").addEventListener("click", function (e) {
+    // console.log(e.target)
+
+    if (e.target.className.includes("copy-btn")) {
+      // alert("card clicked");
+      let copy = parseInt(document.getElementById("copy").innerText);
+
+      document.getElementById("copy").innerText = copy + 1;
+    }
+
+    if (e.target.className.includes("copy-btn")) {
+      const textElement = e.target.parentNode.parentNode.children[2];
+
+      const textToCopy = textElement.textContent;
+
+      if (navigator.clipboard.writeText(textToCopy)) {
+        alert("Text copied to clipboard!");
+      }
+      // .then(() => {
+      //   alert("Text copied to clipboard!");
+      // })
+      // .catch(err => {
+      //   console.error("Failed to copy text: ", err);
+      // });
+    }
+  });
+}
+
+// Copy Count Part End
 
 // Function Calling Part Start
 
 heartCount();
 makeCall();
+copyCount();
 
 // Function Calling Part End
