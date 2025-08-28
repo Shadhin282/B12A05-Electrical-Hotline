@@ -22,13 +22,64 @@ function heartCount() {
 
 //Make Cart Part Start
 
+function makeCall() {
+  document
+    .getElementById("parent-card")
+    .addEventListener("click", function (e) {
+      // console.log(e.target)
+
+      if (e.target.className.includes("call-btn")) {
+        const serviceName =
+          e.target.parentNode.parentNode.children[0].innerText;
+        const serviceNumber =
+          e.target.parentNode.parentNode.children[2].innerText;
+        const now = new Date();
+        let coin = parseInt(document.getElementById("coin").innerText);
+        if (coin < 20) {
+          alert("Coin less not able to make call");
+          return;
+        }
+        alert(serviceName + " and " + serviceNumber);
+
+        document.getElementById("coin").innerText = coin - 20;
+
+        const callHistoryContainer = document.getElementById("call-history-container");
+
+        const newCallRecord = document.createElement("div");
+
+        newCallRecord.innerHTML = `
+        
+            <div
+              class="flex justify-between items-center gap-4 rounded-lg bg-gray-100 p-4">
+              <div>
+                <h1 class="font-semibold inter text-lg">${serviceName}</h1>
+                <p class="hind text-lg text-[#5c5c5c]">${serviceNumber}</p>
+              </div>
+              <div>
+                <p class="hind text-lg">${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}</p>
+              </div>
+            </div>
+        
+        `;
+        callHistoryContainer.appendChild(newCallRecord);
+      }
+    });
+}
+
+//Make Call Part Start
+
+// Clear call history Part Star
+
+document.getElementById("clear-btn").addEventListener('click', function () {
+            document.getElementById("call-history-container").innerHTML = "";
+})
+        
+// Clear call history Part End
 
 
-//Make Cart Part Start
-
-// Function Calling Part Start 
+// Function Calling Part Start
 
 heartCount();
-
+makeCall();
 
 // Function Calling Part End
