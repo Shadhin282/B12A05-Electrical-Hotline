@@ -26,14 +26,89 @@
       rel="stylesheet"
       type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   
+    <!-- internal style -->
+     
+    <style>
+
+      .inter {
+        font-family: "Inter", sans-serif;
+      }
+
+      .hind {
+        font-family: "Hind Madurai", sans-serif;
+      }
+
+      .roboto {
+        font-family: "Roboto", sans-serif;
+      }
+
+    </style>
 
 </head>
-<body>
- 
-    
+
+
+<body class="hind sm:w-[1920px]">
+
+  <!-- Header part Start  -->
+
+    <header>
+
+      <!-- Navbar part Start-->
+      <div
+        class="flex sm:flex-row flex-col gap-2.5 sm:justify-between items-center py-6 px-15">
+        <div class="flex gap-2.5 h-[50px] w-[195px]">
+          <img class="w-[50px] h-[50px]" src="./assets/logo.png" alt="" />
+          <h1 class="font-extrabold inter text-xl leading-6 text-[#006747]">
+            Emergency Service
+          </h1>
+        </div>
+        <div>
+          <ul class="flex gap-5">
+            <li
+              class="bg-green-100 h-13 w-31 flex justify-center items-center px-[35px] py-[14px] rounded-[50px] gap-1">
+              <span id="heart" class="font-extrabold text-[16px]">0</span
+              ><img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="" />
+            </li>
+            <li
+              class="bg-green-100 h-13 w-31 flex justify-center items-center px-[35px] py-[14px] rounded-[50px] gap-1">
+              <span id="coin" class="font-extrabold text-[16px]">100</span
+              ><img class="w-[24px] h-[24px]" src="./assets/coin.png" alt="" />
+            </li>
+            <li
+              class="bg-green-600 h-13 w-32 flex justify-center items-center px-[35px] py-[14px] rounded-[50px] gap-1 text-white">
+              <p class="font-bold inter"> <span id="copy">0 </span>  Copy</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- NavBar part end -->
+
+      <!-- Banner part start -->
+
+      <div
+        class="bg-gradient-to-r text-center from-[#013223] via-[#006747] to-[#013223] px-15 py-3">
+        <img class="h-23 w-23 mx-auto mb-3" src="./assets/logo.png" alt="" />
+        <h1 class="text-white text-[40px] hind font-bold mb-3">
+          Emergency Service Directory
+        </h1>
+        <p class="text-white hind text-xl mb-3">
+          Government Emergency Services at Your Fingertip – A Project by
+          Government of the People’s Republic of Bangladesh
+        </p>
+      </div>
+      <!-- Banner part end -->
+
+    </header>
+
+    <!-- Header Part Ended -->
+
+    <!-- Main Part Start  -->
 
     
+    <!-- Javascript src link added -->
 
     <script src="./js/index.js"></script>
+
 </body>
 </html>
