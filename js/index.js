@@ -43,7 +43,9 @@ function makeCall() {
 
         document.getElementById("coin").innerText = coin - 20;
 
-        const callHistoryContainer = document.getElementById("call-history-container");
+        const callHistoryContainer = document.getElementById(
+          "call-history-container"
+        );
 
         const newCallRecord = document.createElement("div");
 
@@ -70,41 +72,36 @@ function makeCall() {
 
 // Clear call history Part Star
 
-document.getElementById("clear-btn").addEventListener('click', function () {
-            document.getElementById("call-history-container").innerHTML = "";
-})
-        
+document.getElementById("clear-btn").addEventListener("click", function () {
+  document.getElementById("call-history-container").innerHTML = "";
+});
+
 // Clear call history Part End
 
 // Copy Count Part Start
 
 function copyCount() {
-  document.getElementById("parent-card").addEventListener("click", function (e) {
-    // console.log(e.target)
+  document
+    .getElementById("parent-card")
+    .addEventListener("click", function (e) {
+      // console.log(e.target)
 
-    if (e.target.className.includes("copy-btn")) {
-      // alert("card clicked");
-      let copy = parseInt(document.getElementById("copy").innerText);
+      if (e.target.className.includes("copy-btn")) {
+        let copy = parseInt(document.getElementById("copy").innerText);
 
-      document.getElementById("copy").innerText = copy + 1;
-    }
-
-    if (e.target.className.includes("copy-btn")) {
-      const textElement = e.target.parentNode.parentNode.children[2];
-
-      const textToCopy = textElement.textContent;
-
-      if (navigator.clipboard.writeText(textToCopy)) {
-        alert("Text copied to clipboard!");
+        document.getElementById("copy").innerText = copy + 1;
       }
-      // .then(() => {
-      //   alert("Text copied to clipboard!");
-      // })
-      // .catch(err => {
-      //   console.error("Failed to copy text: ", err);
-      // });
-    }
-  });
+
+      if (e.target.className.includes("copy-btn")) {
+        const textElement = e.target.parentNode.parentNode.children[2];
+
+        const textToCopy = textElement.textContent;
+
+        if (navigator.clipboard.writeText(textToCopy)) {
+          alert("Text copied to clipboard!");
+        }
+      }
+    });
 }
 
 // Copy Count Part End
