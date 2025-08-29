@@ -36,10 +36,10 @@ function makeCall() {
         const now = new Date();
         let coin = parseInt(document.getElementById("coin").innerText);
         if (coin < 20) {
-          alert("Coin less not able to make call");
+          alert("You don't have sufficient coin! Need minimum 20 coin to make call.");
           return;
         }
-        alert(serviceName + " and " + serviceNumber);
+        alert('Calling ' + serviceName + " " + serviceNumber + '...');
 
         document.getElementById("coin").innerText = coin - 20;
 
@@ -92,13 +92,15 @@ function copyCount() {
         document.getElementById("copy").innerText = copy + 1;
       }
 
-      if (e.target.className.includes("copy-btn")) {
+        if (e.target.className.includes("copy-btn")) {
+          const serviceNumber =
+          e.target.parentNode.parentNode.children[2].innerText;
         const textElement = e.target.parentNode.parentNode.children[2];
 
         const textToCopy = textElement.textContent;
 
         if (navigator.clipboard.writeText(textToCopy)) {
-          alert("Text copied to clipboard!");
+          alert("Number has been copied, "+ serviceNumber);
         }
       }
     });
